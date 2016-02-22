@@ -7,11 +7,13 @@ import java.math.BigInteger;
  */
 public class Bill {
 
-    String _billName;
+    private String _billName;
 
-    BigInteger _billAmount;
+    private BigInteger _billAmount;
 
-    String _billDescription;
+    private String _billDescription;
+
+    private BigInteger _ID;
 
     /**
      * Create a bill object
@@ -85,5 +87,15 @@ public class Bill {
      */
     public void setBillAmount(BigInteger billAmount) {
         this._billAmount = billAmount;
+    }
+
+
+    public void setID(BigInteger id){
+        _ID = id;
+    }
+
+    public BigInteger getID()
+    {
+        return _ID;
     }
 }

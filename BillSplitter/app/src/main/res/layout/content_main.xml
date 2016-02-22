@@ -32,4 +32,12 @@
         android:layout_alignStart="@+id/createBillButton"
         android:layout_marginTop="41dp" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/header"
+        android:layout_alignParentEnd="true" />
+
 </RelativeLayout>

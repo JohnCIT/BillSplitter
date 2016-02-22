@@ -1,9 +1,9 @@
 package spinky.billsplitter;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
         // Create the main controller.
         _mainViewController = new MainViewController();
 
-        final Button button = (Button) findViewById(R.id.createBillButton);
-        button.setOnClickListener(new View.OnClickListener() {
+        final Button createBillButton = (Button) findViewById(R.id.createBillButton);
+        createBillButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Connect to web service and save data.
 
@@ -39,6 +39,15 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("Bill Created...");
 
                 ArrayList<Bill> bills = _mainViewController.getListOfBills();
+            }
+        });
+
+
+        final Button viewBillButton = (Button) findViewById(R.id.viewBillsButton);
+        viewBillButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ViewBillsActivity.class);
+                startActivity(intent);
             }
         });
     }

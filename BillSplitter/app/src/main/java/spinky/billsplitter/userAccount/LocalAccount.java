@@ -18,6 +18,9 @@ public class LocalAccount {
 
     public void addBill(Bill bill)
     {
+        // TODO Generate ID and add it to the bill.
+        // Bill ID should be done on the database.
+
         listOfBills.add(bill);
     }
 
