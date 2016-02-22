@@ -11,6 +11,9 @@ import spinky.billsplitter.userAccount.LocalAccount;
  */
 public class MainViewController {
 
+    /**
+     * Create a new bill
+     */
     public void createNewBill()
     {
         BigInteger amount = new BigInteger("250");
