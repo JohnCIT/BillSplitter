@@ -25,7 +25,6 @@ public class BillAdapter extends ArrayAdapter<Bill> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        System.out.println("!!!!!!!!!!!!");
         View v = convertView;
 
         if (v == null) {
