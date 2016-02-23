@@ -10,6 +10,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import spinky.billsplitter.bill.Bill;
+import spinky.billsplitter.customui.BillAdapter;
+import spinky.billsplitter.userAccount.LocalAccount;
 
 public class ViewBillsActivity extends AppCompatActivity {
 
@@ -25,7 +27,7 @@ public class ViewBillsActivity extends AppCompatActivity {
         ListView billsList = (ListView) findViewById(R.id.billListView);
         TextView textView = (TextView) findViewById(R.id.textView);
 
-        ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.activity_view_bills, R.id.textView, FRUITS);
+        BillAdapter adapter = new BillAdapter(this, R.id.textView, LocalAccount.getInstance().getListOfBills());
 
         billsList.setAdapter(adapter);
 
