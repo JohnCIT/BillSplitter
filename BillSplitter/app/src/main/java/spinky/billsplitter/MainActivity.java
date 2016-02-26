@@ -32,17 +32,9 @@ public class MainActivity extends AppCompatActivity {
         final Button createBillButton = (Button) findViewById(R.id.createBillButton);
         createBillButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
+                // Start the intent
                 Intent intent = new Intent(MainActivity.this, CreateBillActivity.class);
                 startActivity(intent);
-
-
-
-                // Connect to web service and save data.
-
-                // For now we will keep everything in memory. Gather the details and create the Bill
-                _mainViewController.createNewBill();
-                System.out.println("Bill Created...");
             }
         });
 
