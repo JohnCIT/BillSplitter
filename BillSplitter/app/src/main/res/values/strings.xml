@@ -3,4 +3,10 @@
     <string name="action_settings">Settings</string>
     <string name="view_bills">View Bills</string>
     <string name="create_bills">Create Bill</string>
+    <string name="title_activity_create_bill">CreateBillActivity</string>
+    <string name="billName">Bill Name:</string>
+    <string name="billDescription">Bill Description:</string>
+    <string name="dueDate">Due Date:</string>
+    <string name="billAmount">Bill Amount</string>
+    <string name="createBill">Add Bill</string>
 </resources>

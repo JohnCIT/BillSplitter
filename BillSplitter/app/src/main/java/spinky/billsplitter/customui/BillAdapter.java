@@ -25,35 +25,34 @@ public class BillAdapter extends ArrayAdapter<Bill> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View v = convertView;
+        View view = convertView;
 
-        if (v == null) {
+        if (view == null) {
             LayoutInflater vi;
             vi = LayoutInflater.from(getContext());
-            v = vi.inflate(R.layout.activity_view_bills, null);
+            view = vi.inflate(R.layout.activity_view_bills, null);
         }
 
         Bill bill = getItem(position);
 
         if (bill != null) {
-            TextView tt1 = (TextView) v.findViewById(R.id.textView);
-            TextView tt2 = (TextView) v.findViewById(R.id.billDesc);
-            TextView tt3 = (TextView) v.findViewById(R.id.billDate);
+            TextView billName = (TextView) view.findViewById(R.id.textView);
+            TextView billDesc = (TextView) view.findViewById(R.id.billDesc);
+            TextView billDate = (TextView) view.findViewById(R.id.billDate);
 
-            if (tt1 != null) {
-                tt1.setText(bill.getBillName());
+            if (billName != null) {
+                billName.setText(bill.getBillName());
             }
 
-            if (tt2 != null) {
-                tt2.setText(bill.getBillDescription());
+            if (billDesc != null) {
+                billDesc.setText(bill.getBillDescription());
             }
 
-            if (tt3 != null) {
-                tt3.setText(bill.getBillAmount().toString());
+            if (billDate != null) {
+                billDate.setText(bill.getBillAmount().toString());
             }
         }
 
-        return v;
+        return view;
     }
-
 }

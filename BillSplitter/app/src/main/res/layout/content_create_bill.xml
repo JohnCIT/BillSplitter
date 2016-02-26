@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="spinky.billsplitter.CreateBillActivity"
+    tools:showIn="@layout/activity_create_bill">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/billName"
+        android:id="@+id/billNameLabel"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="49dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/billNameInput"
+        android:layout_alignBottom="@+id/billNameLabel"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="42dp"
+        android:text="Enter Bill Name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/billDescription"
+        android:id="@+id/billDescriptionLabel"
+        android:layout_below="@+id/billNameInput"
+        android:layout_alignStart="@+id/billNameLabel"
+        android:layout_marginTop="44dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/billDescriptionInput"
+        android:layout_alignBottom="@+id/billDescriptionLabel"
+        android:layout_alignEnd="@+id/billNameInput"
+        android:text="Bill Description" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dueDate"
+        android:id="@+id/billDueDateLabel"
+        android:layout_below="@+id/billDescriptionInput"
+        android:layout_alignStart="@+id/billDescriptionLabel"
+        android:layout_marginTop="56dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/billAmount"
+        android:id="@+id/billAmountLabel"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/billDueDateLabel" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/billAmountInput"
+        android:layout_alignTop="@+id/billAmountLabel"
+        android:layout_alignStart="@+id/billNameInput" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/createBill"
+        android:id="@+id/addBillButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/billDescriptionInput"
+        android:layout_marginBottom="86dp" />
+</RelativeLayout>

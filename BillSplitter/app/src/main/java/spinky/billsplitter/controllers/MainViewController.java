@@ -14,11 +14,14 @@ public class MainViewController {
     /**
      * Create a new bill
      */
-    public void createNewBill()
+    public void createNewBill(String billName, String billDescription, String billAmount)
     {
-        BigInteger amount = new BigInteger("250");
-        Bill bill = new Bill("Test name", amount, "Test description");
+        BigInteger amount = new BigInteger(billAmount);
 
+        // Create the bill
+        Bill bill = new Bill(billName, amount, billDescription);
+
+        // Add the bill to the list of bills
         LocalAccount.getInstance().addBill(bill);
     }
 
@@ -27,6 +30,4 @@ public class MainViewController {
     {
         return LocalAccount.getInstance().getListOfBills();
     }
-
-
 }
