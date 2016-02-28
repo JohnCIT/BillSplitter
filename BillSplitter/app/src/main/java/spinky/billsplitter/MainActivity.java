@@ -8,11 +8,13 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import spinky.billsplitter.bill.Bill;
 import spinky.billsplitter.controllers.MainViewController;
+import spinky.billsplitter.toast.ToastMessage;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        // Set up toast message
 
         // Create the main controller.
         _mainViewController = new MainViewController();

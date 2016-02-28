@@ -10,10 +10,12 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import spinky.billsplitter.controllers.MainViewController;
+import spinky.billsplitter.toast.ToastMessage;
 
 public class CreateBillActivity extends AppCompatActivity {
 
     MainViewController _mainViewController;
+    ToastMessage _toastMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,9 @@ public class CreateBillActivity extends AppCompatActivity {
         setContentView(R.layout.activity_create_bill);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        // Set up toast messages
+        _toastMessage = new ToastMessage(getApplicationContext());
 
         // Create the main controller.
         _mainViewController = new MainViewController();
@@ -36,7 +41,7 @@ public class CreateBillActivity extends AppCompatActivity {
 
                 // Gather the data
                 final EditText billNameInput = (EditText) findViewById(R.id.billNameInput);
-                final EditText billDescriptionInput = (EditText) findViewById(R.id.billNameInput);
+                final EditText billDescriptionInput = (EditText) findViewById(R.id.billDesc);
                 // TODO Bill due date
                 final EditText billAmountInput = (EditText) findViewById(R.id.billAmountInput);
 
@@ -46,6 +51,10 @@ public class CreateBillActivity extends AppCompatActivity {
 
                 // Create the bill
                 _mainViewController.createNewBill(billName, billDesc, billAmount);
+
+                // Tell the user a bill has been created
+                _toastMessage.createToastMessage(getString(R.string.createdBillToast));
+                finish();
             }
         });
 
